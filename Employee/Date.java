@@ -9,7 +9,7 @@ public class Date{
 	{0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
 	// constructor
-	public Date(int year, int month, int day){
+	public Date(int day, int month, int year){
 		// validate month
 		if (month <= 0 || month > 12){
 			throw new IllegalArgumentException(
@@ -23,7 +23,7 @@ public class Date{
 		}
 
 		// check for leap year if month ==2 and day==29
-		if (month == 2 && day == 29 &&  !(year % 400 == 0 || (year $ 4 == 0 && year % 100 != 0))){
+		if (month == 2 && day == 29 &&  !(year % 400 == 0 || (year % 4 == 0 && year % 100 != 0))){
 			throw new IllegalArgumentException(
 					"Day (" + day + ") out of range for specified month and year");
 		}
