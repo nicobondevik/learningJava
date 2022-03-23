@@ -24,6 +24,26 @@ public class Time2Test{
 			System.out.printf("%nException while initializing t6: %s%n",
 					e.getMessage());
 		}
+
+        // test increment-methods
+        // tick
+        System.out.printf("t4 before tick():\t%s%n", t4);
+        t4.tick();
+        System.out.printf("t4 after tick():\t%s%n", t4);
+
+        // incrementMinute
+        t4.incrementMinute();
+        System.out.printf("t4 after incrementMinute():\t%s%n", t4);
+
+        // incrementHour
+        t4.incrementHour();
+        System.out.printf("t4 after incrementHour():\t%s%n", t4);
+
+        // test tick over minute
+        for (int i=0; i<30; i++){
+            t4.tick();
+        }
+        System.out.printf("t4 after 30 ticks:\t%s%n", t4);
 	}
 
 	// display Time2-object in 24-hour and 12-hour formats

@@ -33,6 +33,33 @@ public class Time2{
 		this(time.getHour(), time.getMinute(), time.getSecond());
 	} // end obj-constructor
 
+    // tick method for incrementing the seconds
+    public void tick(){
+        if (this.second == 59){
+            this.second = 0;
+            this.minute++;
+        }
+        else
+            this.second++;
+    }
+
+    public void incrementMinute(){
+        if (this.minute == 59){
+            this.minute = 0;
+            this.hour++;
+        }
+        else
+            this.minute++;
+    }
+
+    public void incrementHour(){
+        if (this.hour == 23){
+            this.hour = 0;
+        }
+        else
+            this.hour++;
+    }
+
 	// set time using universal time
 	public void setTime(int hour, int minute, int second){
 		validate_time(hour, minute, second);
