@@ -44,6 +44,12 @@ public class Time2Test{
             t4.tick();
         }
         System.out.printf("t4 after 30 ticks:\t%s%n", t4);
+
+        // test incrementing into the next day
+        for (int i=0; i<8; i++){
+            t4.incrementHour();
+        }
+        System.out.printf("t4 after 8 hours:\t%s%n", t4);
 	}
 
 	// display Time2-object in 24-hour and 12-hour formats
