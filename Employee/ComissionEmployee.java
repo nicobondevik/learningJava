@@ -29,7 +29,7 @@ public class ComissionEmployee extends Object{
         return String.format("%s, %s", lastName, firstName);
     }
 
-    public String ss(){
+    public String getSS(){
         return socialSecurityNumber;
     }
 
@@ -68,6 +68,6 @@ public class ComissionEmployee extends Object{
                 "Social Security number: %s%n" +
                 "Gross sales: %.2f%n" +
                 "Comission rate: %.2f%n",
-                getName(), ss(), getGross(), getComission());
+                getName(), getSS(), getGross(), getComission());
     } // end toString
 } // end class ComissionEmployee
