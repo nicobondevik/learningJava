@@ -1,28 +1,28 @@
-// An employee who works on comission
-public class ComissionEmployee extends Object{
+// An employee who works on commission
+public class CommissionEmployee extends Object{
     private final String firstName;
     private final String lastName;
     private final String socialSecurityNumber;
     private double grossSales;
-    private double comissionRate;
+    private double commissionRate;
 
     // constructor
-    public ComissionEmployee(String firstName, String lastName,
+    public CommissionEmployee(String firstName, String lastName,
             String socialSecurityNumber, double grossSales,
-            double comissionRate){
+            double commissionRate){
         if (grossSales < 0.0)
             throw new IllegalArgumentException(
                     "Gross sales must be >= 0.0");
 
-        if (comissionRate <= 0.0 || comissionRate >= 1.0)
+        if (commissionRate <= 0.0 || commissionRate >= 1.0)
             throw new IllegalArgumentException(
-                    "Comission rate must be between 0 and 1");
+                    "Commission rate must be between 0 and 1");
 
         this.firstName = firstName;
         this.lastName = lastName;
         this.socialSecurityNumber = socialSecurityNumber;
         this.grossSales = grossSales;
-        this.comissionRate = comissionRate;
+        this.commissionRate = commissionRate;
     } // end constructor
 
     public String getName(){
@@ -40,34 +40,36 @@ public class ComissionEmployee extends Object{
         this.grossSales = grossSales;
     }
 
-    public void setComission(double comissionRate){
-        if (comissionRate <= 0.0 || comissionRate >= 1.0)
+    public void setCommission(double commissionRate){
+        if (commissionRate <= 0.0 || commissionRate >= 1.0)
             throw new IllegalArgumentException(
-                    "Comission rate must be between 0 and 1.");
-        this.comissionRate = comissionRate;
+                    "Commission rate must be between 0 and 1.");
+        this.commissionRate = commissionRate;
     }
 
     public double getGross(){
         return grossSales;
     }
 
-    public double getComission(){
-        return comissionRate;
+    public double getCommission(){
+        return commissionRate;
     }
 
     // calculate earnings
     public double earnings(){
-        return comissionRate * grossSales;
+        return commissionRate * grossSales;
     }
 
     // string representation of employee-object
     // @override used to override superclass method
     @Override
     public String toString(){
-        return String.format("Comission employee: %s%n:" +
+        return String.format("Commission employee: %s%n" +
                 "Social Security number: %s%n" +
                 "Gross sales: %.2f%n" +
-                "Comission rate: %.2f%n",
-                getName(), getSS(), getGross(), getComission());
+                "Commission rate: %.2f\n" +
+                "Earnings: %.2f",
+                getName(), getSS(), getGross(), getCommission(),
+                earnings());
     } // end toString
-} // end class ComissionEmployee
+} // end class CommissionEmployee
