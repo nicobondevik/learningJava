@@ -37,21 +37,15 @@ public class BaseCommissionEmployee extends CommissionEmployee{
     // new earnings-calculation
     @Override // gives errors if the function is not found in super
     public double earnings(){
-        return baseSalary + (getGross() * getCommission());
+        return baseSalary + super.earnings();
     }
 
     // new string representation
     @Override
     public String toString(){
-        return String.format(
-                "Namee: %s%n" +
-                "Social Security Number: %s%n" +
-                "Gross sales: %.2f%n" +
-                "Commission rate: %.2f%n" +
-                "Base salary: %.2f%n" +
-                "Earnings: %.2f%n",
-                getName(), getSS(), getGross(), getBaseSalary(),
-                getCommission(), earnings());
+        return String.format("%s%n"+
+                "Base salary: %.2f", 
+                super.toString(), getBaseSalary());
     } // end toString
 } // end class
 

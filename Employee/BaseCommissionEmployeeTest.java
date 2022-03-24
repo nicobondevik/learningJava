@@ -18,9 +18,10 @@ public class BaseCommissionEmployeeTest{
         System.out.printf("Comission rate: %.2f%n", 
                 employee.getCommission());
 
-        System.out.printf("Base salary: %.2f%n", employee.getBaseSalary());
-
         System.out.printf("Earnings: %.2f\n\n", employee.earnings());
+
+        System.out.printf("Base salary: %.2f%n", 
+                employee.getBaseSalary());
 
         // set employee-data
         employee.setGross(5000);
