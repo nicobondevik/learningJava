@@ -60,7 +60,7 @@ public class HourlyEmployee extends Employee{
     public String toString(){
         return String.format(
                 "Hourly employee.%n%s%nHourly wage: %,.2f%n" +
-                "Hours worked: %,.2f", super.toString(), getWage(),
-                getHours());
+                "Hours worked: %,.2f",
+                super.toString(), getWage(), getHours());
     } // end toString
 } // end class HourlyEmployee

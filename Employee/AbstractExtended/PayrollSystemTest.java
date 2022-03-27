@@ -32,7 +32,7 @@ public class PayrollSystemTest{
         
         // for loop assigns every subclass-object to the abstract superclass
         for (Employee currentEmployee : employees){
-            System.out.printf("%n%s", currentEmployee); // invokes toString
+            System.out.printf("%s%n", currentEmployee); // invokes toString
             
             // check whether the employee is a BasePlusCommissionEmployee
             if (currentEmployee instanceof BasePlusCommissionEmployee){
@@ -43,15 +43,15 @@ public class PayrollSystemTest{
                 // increase salary by 10%
                 employee.setBaseSalary(1.10 * employee.getBaseSalary());
                 System.out.printf(
-                        "New base salary: %,.2f",
+                        "New base salary: %,.2f%n",
                         employee.getBaseSalary());
             } // end if
 
             System.out.printf(
-                    "%nEarned: %,.2f%n", currentEmployee.earnings());
+                    "Earned: %,.2f%n", currentEmployee.earnings());
+        System.out.printf("%n");
         } // end for loop
-        
-        System.out.println();
+
         // get type name of each object in the employee array
         for (int j=0; j<employees.length; j++){
             System.out.printf(
