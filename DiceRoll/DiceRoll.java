@@ -15,6 +15,7 @@ public class DiceRoll{
 			int die2;
 			int sum;
 			int[] rolls = new int[12];
+
 			int n = Integer.parseInt(args[0]);
 			Random random = new Random();
 			
